@@ -4,7 +4,7 @@ async function loadPoints() {
 
   // casas iniciales
   const houses = {
-    calavazaclaw: { name: "Calavazaclaw", color: "calavazaclaw", points: 0 },
+    calabazaclaw: { name: "Calabazaclaw", color: "calabazaclaw", points: 0 },
     spoilherin: { name: "Spoilherin", color: "spoilherin", points: 0 },
     trubbishdor: { name: "Trubbishdor", color: "trubbishdor", points: 0 },
     bolitapuff: { name: "Bolitapuff", color: "bolitapuff", points: 0 }
@@ -12,7 +12,9 @@ async function loadPoints() {
 
   // sumar puntos
   data.forEach(entry => {
-    houses[entry.house].points += entry.points;
+    if (houses[entry.house]) {
+      houses[entry.house].points += entry.points;
+    }
   });
 
   const totalPoints = Object.values(houses).reduce((a, h) => a + h.points, 0) || 1;
@@ -44,9 +46,11 @@ async function loadPoints() {
   const list = document.getElementById("points-list");
   list.innerHTML = "";
   data.forEach(entry => {
-    const li = document.createElement("li");
-    li.textContent = `${entry.points} puntos → ${houses[entry.house].name} → ${entry.reason}`;
-    list.appendChild(li);
+    if (houses[entry.house]) {
+      const li = document.createElement("li");
+      li.textContent = `${entry.points} puntos → ${houses[entry.house].name} → ${entry.reason}`;
+      list.appendChild(li);
+    }
   });
 }
 
