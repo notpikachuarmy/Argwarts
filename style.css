@@ -1,0 +1,66 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background: #f4f4f4;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 30px;
+}
+
+.house {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 10px;
+}
+
+.house img {
+  width: 60px;
+  height: 60px;
+  margin-right: 15px;
+}
+
+.house-info {
+  flex: 1;
+  text-align: left;
+}
+
+.progress-bar {
+  width: 100%;
+  background: #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 20px;
+  margin-top: 5px;
+}
+
+.progress {
+  height: 100%;
+  text-align: right;
+  color: white;
+  font-size: 12px;
+  padding-right: 5px;
+}
+
+.calavazaclaw { background: orange; }
+.spoilherin { background: red; }
+.trubbishdor { background: green; }
+.bolitapuff { background: purple; }
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin: 5px 0;
+  background: white;
+  padding: 8px;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
